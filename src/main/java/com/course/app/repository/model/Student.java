@@ -7,22 +7,24 @@ import javax.persistence.*;
 public class Student {
 
     @Id
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "RUT")
+    @Column(name = "rut")
     private String rut;
 
-    @Column(name = "NAME")
+    @Column(name = "name")
     private String name;
 
-    @Column(name = "LAST_NAME")
+    @Column(name = "last_name")
     private String lastName;
 
-    @Column(name = "AGE")
+    @Column(name = "age")
     private Integer age;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
+    @JoinColumn(name="course", nullable=false)
     private Course course;
 
     public Long getId() {

@@ -7,6 +7,7 @@ import javax.persistence.*;
 public class Course {
 
     @Id
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
